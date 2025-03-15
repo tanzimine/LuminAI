@@ -55,7 +55,15 @@ LuminAI is a comprehensive AI-powered platform that provides intelligent busines
 - Manus
 
 ### SCREENSHOTS (lumin.ai)
-
+![Image](https://github.com/user-attachments/assets/3772db09-1039-4b66-8708-2dd86ae227fa)
+![Image](https://github.com/user-attachments/assets/96da2c4d-925a-4295-a3ac-ce8193ccf3ca)
+![Image](https://github.com/user-attachments/assets/3046e863-f949-43c7-8980-e88c0e3962af)
+![Image](https://github.com/user-attachments/assets/1d41bdf9-c07c-462c-82c9-6638bd348cb5)
+![Image](https://github.com/user-attachments/assets/5409dfe4-bc36-44fb-9afe-bda1edde0a5b)
+![Image](https://github.com/user-attachments/assets/c28f5d68-ce99-4ab7-9294-477e7397cff9)
+![Image](https://github.com/user-attachments/assets/c564839e-cee0-4d1a-81f2-b7d7172965cc)
+![Image](https://github.com/user-attachments/assets/6bd162d7-aa27-4845-8983-0100c566ea94)
+![Image](https://github.com/user-attachments/assets/5569407c-221d-485d-a2de-da7100c7773b)
 
 
 ## 💻 Getting Started
