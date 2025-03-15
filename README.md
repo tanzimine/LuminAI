@@ -1,5 +1,8 @@
 # LuminAI - AI-Powered Business Solutions Platform
 
+## 🌟 **[LIVE DEMO](https://luminai-business.netlify.app/)** 🌟
+Experience the power of AI-driven business solutions - **[Visit Demo Site](https://luminai-business.netlify.app/)**
+
 ![LuminAI Banner](screenshots/banner.png)
 
 ## 🎥 Live Demo
