@@ -9,27 +9,30 @@ Experience the power of AI-driven business solutions - **[Visit Demo Site](https
 
 **[🌟 LIVE DEMO SITE](https://luminai-business.netlify.app/)**
 
-Watch a complete walkthrough of LuminAI's features:
+Screenshots of a complete walkthrough of LuminAI's features:
 
-[▶️ Watch Demo Video](your-youtube-link-here)
+![Image](https://github.com/user-attachments/assets/3c3f1474-a194-4510-9459-934401fd54aa)
+![Image](https://github.com/user-attachments/assets/60e95f0d-15fa-43bb-8902-826d6830622d)
+![Image](https://github.com/user-attachments/assets/788a0bd5-35b1-46e7-b434-58891aa83db0)
+
 
 ## ✨ Key Features
 
 ### 1. AI Logo Generator
 Generate unique, professional logos for your business using AI.
-![Logo Generator](screenshots/logo-generator.png)
+![Logo Generator] ![Image](https://github.com/user-attachments/assets/490b991d-1161-4a7d-8bdc-ba9224514f54)
 
 ### 2. SEO Research Tools
 Optimize your content with AI-powered SEO insights.
-![SEO Tools](screenshots/seo-tools.png)
+![SEO Tools]![Image](https://github.com/user-attachments/assets/2cf8e327-e6a2-452a-80fb-e17ecf805d14)
 
 ### 3. Task Management CRM
 Streamline your workflow with our intuitive task management system.
-![Task Management](screenshots/task-management.png)
+![Task Management]![Image](https://github.com/user-attachments/assets/b24af020-ba77-44c3-9e74-d43848c089b8)
 
 ### 4. Ideas Generator
 Get AI-powered creative suggestions for your business.
-![Ideas Generator](screenshots/ideas-generator.png)
+![Ideas Generator]![Image](https://github.com/user-attachments/assets/7761d2f2-bf66-42b8-b0e0-e78a6e78ee35)
 
 ## 🛠️ Tech Stack
 
