@@ -49,6 +49,15 @@ LuminAI is a comprehensive AI-powered platform that provides intelligent busines
 - Stripe Integration
 - JWT Authentication
 
+### AI Tools
+- Cursor
+- Claude 3.7
+- Manus
+
+### SCREENSHOTS (lumin.ai)
+
+
+
 ## 💻 Getting Started
 
 ### Prerequisites
