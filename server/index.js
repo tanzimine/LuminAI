@@ -29,6 +29,15 @@ const connectToDb = async () => {
   }
 };
 
+// Basic health check
+app.get('/', (req, res) => {
+  res.json({ status: 'API is running' });
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'healthy', timestamp: new Date().toISOString() });
+});
+
 // Routes
 app.use('/api/v1/post', async (req, res, next) => {
   await connectToDb();
@@ -43,11 +52,6 @@ app.use('/api/v1/dalle', async (req, res, next) => {
 app.use('/api/stripe', async (req, res, next) => {
   await connectToDb();
   return stripeRoutes(req, res, next);
-});
-
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'healthy' });
 });
 
 // Error handling middleware
