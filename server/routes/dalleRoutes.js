@@ -47,6 +47,16 @@ dotenv.config();
 const router = express.Router();
 const PEXELS_API_URL = "https://api.pexels.com/v1/search";
 
+// Validate Pexels API key
+if (!process.env.PEXELS_API_KEY) {
+  console.error('❌ PEXELS_API_KEY is not set in environment variables');
+  throw new Error('PEXELS_API_KEY is required');
+}
+
+router.get('/', (req, res) => {
+  res.json({ message: 'Image Generation API is running' });
+});
+
 router.post('/', async (req, res) => {
   try {
     const { prompt } = req.body;
@@ -57,20 +67,39 @@ router.post('/', async (req, res) => {
 
     console.log('🔍 Searching for images on Pexels:', prompt);
 
-    const response = await axios.get(`${PEXELS_API_URL}?query=${encodeURIComponent(prompt.trim())}&per_page=1`, {
-      headers: { Authorization: process.env.PEXELS_API_KEY }
-    });
+    const response = await axios.get(
+      `${PEXELS_API_URL}?query=${encodeURIComponent(prompt.trim())}&per_page=1`,
+      {
+        headers: { 
+          'Authorization': process.env.PEXELS_API_KEY,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
 
     if (!response.data || !response.data.photos || response.data.photos.length === 0) {
-      throw new Error('No images found for this prompt.');
+      return res.status(404).json({ error: 'No images found for this prompt.' });
     }
 
-    console.log('✅ Image URL:', response.data.photos[0].src.original);
-    res.status(200).json({ photo: response.data.photos[0].src.original });
+    const imageUrl = response.data.photos[0].src.original;
+    console.log('✅ Image URL:', imageUrl);
+    
+    res.status(200).json({ 
+      photo: imageUrl,
+      alt: response.data.photos[0].alt || prompt,
+      photographer: response.data.photos[0].photographer
+    });
 
   } catch (error) {
     console.error('❌ Pexels API Error:', error.message);
-    res.status(500).json({ error: 'Failed to fetch image', details: error.message });
+    if (error.response) {
+      console.error('Response data:', error.response.data);
+      console.error('Response status:', error.response.status);
+    }
+    res.status(error.response?.status || 500).json({ 
+      error: 'Failed to fetch image', 
+      details: error.message 
+    });
   }
 });
 
