@@ -4,7 +4,7 @@ import { Box, Button, Container, TextField, Typography, Paper } from '@mui/mater
 import { motion } from 'framer-motion';
 import { preview } from '../assets';
 import { FormField, Loader } from '../components';
-import { API_BASE_URL, API_ROUTES } from '../config';
+import { API_ROUTES } from '../config';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -26,7 +26,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch(`${API_BASE_URL}${API_ROUTES.dalle}`, {
+        const response = await fetch(API_ROUTES.dalle, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch(`${API_BASE_URL}${API_ROUTES.posts}`, {
+        const response = await fetch(API_ROUTES.posts, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
