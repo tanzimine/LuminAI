@@ -1,9 +1,15 @@
 services:
   - type: web
-    name: lumin-ai-backend
+    name: luminai
     env: node
-    buildCommand: cd server && npm install
+    plan: free
+    region: oregon
+    buildCommand: |
+      cd server && npm install
+      cd ../client && npm install && npm run build
+      cp -r dist ../server/public
     startCommand: cd server && npm start
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
@@ -11,20 +17,24 @@ services:
         sync: false
       - key: OPENAI_API_KEY
         sync: false
-      - key: STRIPE_SECRET_KEY
-        sync: false
-      - key: STRIPE_WEBHOOK_SECRET
-        sync: false
+    autoDeploy: true
 
   - type: web
     name: lumin-ai-frontend
     env: static
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: ./client/dist
+    plan: free
+    region: oregon
     envVars:
       - key: VITE_API_URL
         value: https://lumin-ai-backend.onrender.com
     routes:
       - type: rewrite
         source: /*
-        destination: /index.html 
+        destination: /index.html
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000
+    autoDeploy: true 
