@@ -18,10 +18,15 @@ services:
       - key: CLOUDINARY_API_SECRET
         sync: false
 
-  - type: static-site
+  - type: web
     name: luminai-client
+    env: static
     buildCommand: cd client && npm install && npm run build
-    publishDir: client/dist
+    staticPublishPath: ./client/dist
     envVars:
       - key: VITE_API_URL
         value: https://luminai-server.onrender.com
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
