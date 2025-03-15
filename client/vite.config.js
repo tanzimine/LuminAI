@@ -17,13 +17,6 @@ export default defineConfig({
   },
   base: '',
   server: {
-    port: 3000,
-    proxy: {
-      '/api': {
-        target: 'https://luminai-backend.onrender.com',
-        changeOrigin: true,
-        secure: false
-      }
-    }
+    port: 3000
   }
 })

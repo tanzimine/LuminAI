@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Search as SearchIcon, AutoAwesome as AutoAwesomeIcon, Speed as SpeedIcon, Security as SecurityIcon, Palette as PaletteIcon, Analytics as AnalyticsIcon, Business as BusinessIcon } from '@mui/icons-material';
 import { Card, Loader, StatCard, HeroSection, TestimonialSection } from '../components';
 import { useNavigate } from 'react-router-dom';
+import { API_ROUTES } from '../config';
 
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
@@ -66,7 +67,7 @@ const Home = ({ darkMode }) => {
   const fetchPosts = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/v1/post', {
+      const response = await fetch(API_ROUTES.posts, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -1,14 +1,15 @@
-export const API_URL = 'https://luminai-backend.onrender.com';
+// API Configuration
+const API_URL = 'https://luminai-backend.onrender.com';
 export const API_BASE_URL = API_URL;
 
 export const API_ROUTES = {
-  dalle: '/api/v1/dalle',
-  posts: '/api/v1/post',
+  dalle: `${API_URL}/api/v1/dalle`,
+  posts: `${API_URL}/api/v1/post`,
   stripe: '/api/stripe',
-  health: '/api/health'
+  health: `${API_URL}/api/health`
 };
 
-// Other configuration variables can be added here
+// Export configuration
 export const config = {
   apiUrl: API_URL,
   apiEndpoints: API_ROUTES
