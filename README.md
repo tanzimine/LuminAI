@@ -1,121 +1,198 @@
-# AI Image Generation with DALL-E API and MERN Stack
+# LuminAI - AI-Powered Business Solutions Platform
 
-AI image generation, an exciting and rapidly evolving field in the realm of artificial intelligence. In recent years, there has been a significant advancement in the capabilities of machine learning algorithms, particularly in the area of generative models. With the development of deep learning techniques, researchers have been able to create powerful AI models that can generate images that are nearly indistinguishable from real images. These AI image generation models have numerous potential applications in various fields, including entertainment, design, and advertising. 
+![LuminAI Logo](client/src/assets/logo.svg)
 
-This project was inspired by one of such powerful AI image generation models: `OpenAI's DALL-E`
+LuminAI is a comprehensive AI-powered platform that provides intelligent business solutions, including logo generation, SEO research, task management, and creative ideation tools.
 
-This is a full-stack web application developed using the MERN stack. The application allows users to create AI-generated images using OpenAI's DALL-E API, based on their input text. The speciality of the developed application is, it offers a modern and minimal design with dynamic layouts, hover effects, and sharing options with the community.
+## 🌟 Features
 
-## ❇️ Features added :
+### 1. AI Logo Generator
+- Generate unique, professional logos instantly
+- Multiple style variations
+- Customizable colors and formats
+- One-click download in various formats
 
-* Modern and minimal interface for easy navigation.
-* Surprise me! button.
-* Search functionality.
-* Download generated images to user's device.
-* Hover effects that generate user's prompt along with username and download button.
-* Share functionality to share the AI generated images with the community on the community section.
+### 2. SEO Research Tools
+- Advanced keyword analysis
+- Competitor research
+- Content optimization suggestions
+- Real-time ranking insights
 
-## 🧑‍💻 Tech Stack
+### 3. Task Management CRM
+- Intelligent task automation
+- Team collaboration tools
+- Progress tracking
+- Automated assignments
 
-**Client:** HTML, TailwindCSS, JavaScript, React
+### 4. Ideas Generator
+- AI-powered brainstorming
+- Marketing campaign suggestions
+- Content strategy planning
+- Creative concept development
 
-**Server:** NodeJS, Express, MongoDB, Cloudinary
+## 🚀 Tech Stack
 
-**API:** OpenAI's DALL-E
+### Frontend
+- React 18
+- Vite
+- Material-UI (MUI)
+- Framer Motion
+- React Router DOM
+- Axios
+- React-Toastify
 
-## Demo
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- OpenAI API
+- Stripe Integration
+- JWT Authentication
 
-https://ai-image-gen-by-saivamsi.netlify.app/
+## 💻 Getting Started
 
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB
+- OpenAI API key
+- Stripe account (for payments)
 
-## 📸 Screenshots
-* Home Page
+### Installation
 
-![Home Page](https://user-images.githubusercontent.com/117112672/224544225-c6f79f39-d51c-41e0-acce-fb9c2fdd01a6.jpg)
+1. Clone the repository
+```bash
+git clone https://github.com/tanzimine/LuminAI.git
+cd LuminAI
+```
 
+2. Install dependencies
+```bash
+# Install root dependencies
+npm install
 
-* Community Showcase
+# Install client dependencies
+cd client
+npm install
 
-![Community Showcase](https://user-images.githubusercontent.com/117112672/224544277-9ba5308d-4d80-4038-b778-8b36a8347611.jpg)
+# Install server dependencies
+cd ../server
+npm install
+```
 
-* Search Functionality
+3. Set up environment variables
 
-![Search Functionality](https://user-images.githubusercontent.com/117112672/224544308-832a0c99-f516-4cce-a452-be6680fa0922.jpg)
+Create a `.env` file in the server directory:
+```env
+MONGODB_URL=your_mongodb_url
+OPENAI_API_KEY=your_openai_api_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+NODE_ENV=development
+PORT=5000
+```
 
-* Image Generation
+Create a `.env` file in the client directory:
+```env
+VITE_API_URL=http://localhost:5000
+```
 
-![Image Generation](https://user-images.githubusercontent.com/117112672/224544326-0976a7b2-ab62-4a7c-b813-a4827ab7a903.jpg)
+4. Start the development servers
 
+In the server directory:
+```bash
+npm start
+```
 
-## 🧐 How to use
+In the client directory:
+```bash
+npm run dev
+```
 
-Here is a step-by-step guide on how to use the application:
+## 🌐 API Endpoints
 
-- Upon visiting the home page, you will see a "Community Showcase" section with a search bar. Use the search bar to find images created by other users by entering keywords or usernames. Hover over any image to view the username, input prompt, and download icon.
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - User login
 
-- Click on the `Create` button at the top right of the page to go to the "Create" section. Here, you can generate AI-generated images by providing a username and input prompt or by using the `Surprise Me` button to get ideas for image generation.
+### Logo Generation
+- `POST /api/v1/dalle` - Generate logo
+- `GET /api/v1/post` - Get all generated logos
+- `POST /api/v1/post` - Save generated logo
 
-- After entering the necessary details, click on the `Generate` button. If the generated image is not satisfactory, click on the `Generate` button again until you get a desired image.
+### SEO Research
+- `POST /api/v1/seo-research` - Analyze keywords
+- `GET /api/v1/seo-research/:id` - Get analysis results
 
-- Once you have generated a desirable image, click on the `Share with Community` button to upload and share your custom AI-generated image. You can also download the image to your local machine by clicking on the download icon on the image preview.
+### Task Management
+- `GET /api/v1/tasks` - Get all tasks
+- `POST /api/v1/tasks` - Create new task
+- `PUT /api/v1/tasks/:id` - Update task
+- `DELETE /api/v1/tasks/:id` - Delete task
 
-- Your custom AI-generated image will now be displayed in the "Community Showcase" section for other users to see and search for.
+## 🔒 Security
 
+- JWT authentication
+- Rate limiting
+- CORS protection
+- Input validation
+- Secure password hashing
+- Environment variable protection
 
-## 🧐 How it works with the tech stack
+## 🚀 Deployment
 
-The application is built using the MERN stack, which includes MongoDB, Express.js, React, and Node.js. In addition, the OpenAI DALL-E API is used for generating the AI images, and Cloudinary is used to store and showcase the images on the home page.
+### Using Render
 
-Here is a high-level overview of how the application works at the backend:
+1. Create a new account on Render
+2. Connect your GitHub repository
+3. Create a new Web Service for the backend
+4. Create a new Static Site for the frontend
+5. Configure environment variables
+6. Deploy!
 
-- The user submits a request to generate an AI-generated image, providing a username and input prompt.
+Detailed deployment instructions are available in [DEPLOYMENT.md](DEPLOYMENT.md)
 
-- The request is sent to the server, which uses Node.js and Express.js to handle HTTP requests and responses.
+## 📱 Responsive Design
 
-- The server makes an API call to the OpenAI DALL-E API, passing the username and input prompt as parameters. The API returns an image that is generated based on the input prompt.
+LuminAI is fully responsive and optimized for:
+- Desktop computers
+- Tablets
+- Mobile devices
+- Different screen sizes and orientations
 
-- The server receives the image from the DALL-E API and stores it in a MongoDB database. The image is also uploaded to Cloudinary, a cloud-based image management service, for showcasing on the home page.
+## ⚡ Performance
 
-- The server sends a response to the client, which includes the generated image and a link to the image on Cloudinary.
+- Lazy loading of components
+- Image optimization
+- Code splitting
+- Caching strategies
+- Minified production builds
 
-- The user can then share their custom AI-generated image with the community by clicking on the "Share with Community" button. This sends a request to the server to add the image to the community showcase section on the home page.
+## 🤝 Contributing
 
-- The server retrieves the image from the MongoDB database and updates the home page with the new image, which is now visible to other users.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-In summary, the backend of this web application uses the MERN stack and OpenAI's DALL-E API, along with Cloudinary for storing and showcasing the images on the home page. The server handles user requests, makes API calls to the DALL-E API, stores the generated images in a MongoDB database, and updates the home page with new images shared by users.
+## 📄 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📖 Lessons Learned
+## 👥 Team
 
-By working on this project, I have learned several valuable lessons which helped me to build a broad range of skills that are useful in a variety of web development projects, including:
+- Tanzim Sami - Full Stack Developer & Project Lead
 
-- *Full Stack Web Development*
+## 📞 Support
 
-The project involves working on both the front-end and back-end of the application, so that allowed me to gain a better understanding of full-stack web development.
+For support, email support@luminai.com or join our Slack channel.
 
-- *MERN Stack*
+## 🙏 Acknowledgments
 
-Developing the application using the MERN stack provided me an opportunity to learn about the different technologies involved, including MongoDB, Express.js, React, and Node.js.
+- OpenAI for their powerful API
+- Material-UI team for the amazing component library
+- The open-source community for their invaluable contributions
 
-- *Image Processing*
+---
 
-Working on this image generation project somehow it provided me a chance to learn about image processing techniques, including manipulating images based on user input.
-
-- *Sharing System*
-
-By developing a feature that allows users to share their AI generated images with the community has provided me an insight into the importance of social features in web applications.
-
-- *Design and User Experience*
-
-Building a modern and minimalistic design taught me about the importance of design and user experience in web applications and how they impact user engagement.
-
-Overall, this project was a great learning experience that helped me improve my web development skills and gain a better understanding of the technologies involved.
-
-## 🚀 About Me
-Hi there! I am Sai Vamsi, a final year computer science undergraduate with specialization in Artificial Intelligence at Vel Tech University, Chennai. I have a strong passion for software development, and Artificial Intelligence.
-
-I'm proficient in C, C++, Java, and Python programming languages. I also have expertise in Data Structures and Algorithms. Besides, I am a Full-stack Web Developer who is familiar with front-end development technologies like HTML, CSS, JavaScript, and React, and also back-end development with Node.js, Express.js, and MongoDB.
-
-On my GitHub profile, you can find a collection of projects that demonstrate my programming and development skills. 
-
-Thank you for taking the time to learn about me, and feel free to check out my projects on GitHub!
+Made with ❤️ by LuminAI Team
