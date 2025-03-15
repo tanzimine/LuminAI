@@ -1,77 +1,58 @@
 # LuminAI - AI-Powered Business Solutions Platform
 
-![LuminAI Logo](client/src/assets/logo.svg)
+![LuminAI Banner](screenshots/banner.png)
 
-LuminAI is a comprehensive AI-powered platform that provides intelligent business solutions, including logo generation, SEO research, task management, and creative ideation tools.
+## 🎥 Live Demo
 
-## 🌟 Features
+Watch a complete walkthrough of LuminAI's features:
+
+[▶️ Watch Demo Video](your-youtube-link-here)
+
+## ✨ Key Features
 
 ### 1. AI Logo Generator
-- Generate unique, professional logos instantly
-- Multiple style variations
-- Customizable colors and formats
-- One-click download in various formats
+Generate unique, professional logos for your business using AI.
+![Logo Generator](screenshots/logo-generator.png)
 
 ### 2. SEO Research Tools
-- Advanced keyword analysis
-- Competitor research
-- Content optimization suggestions
-- Real-time ranking insights
+Optimize your content with AI-powered SEO insights.
+![SEO Tools](screenshots/seo-tools.png)
 
 ### 3. Task Management CRM
-- Intelligent task automation
-- Team collaboration tools
-- Progress tracking
-- Automated assignments
+Streamline your workflow with our intuitive task management system.
+![Task Management](screenshots/task-management.png)
 
 ### 4. Ideas Generator
-- AI-powered brainstorming
-- Marketing campaign suggestions
-- Content strategy planning
-- Creative concept development
+Get AI-powered creative suggestions for your business.
+![Ideas Generator](screenshots/ideas-generator.png)
 
-## 🚀 Tech Stack
+## 🛠️ Tech Stack
 
 ### Frontend
-- React 18
-- Vite
-- Material-UI (MUI)
-- Framer Motion
-- React Router DOM
-- Axios
-- React-Toastify
+- React 18 with Vite
+- Material-UI for modern UI components
+- Redux Toolkit for state management
+- React Router for navigation
+- Axios for API communication
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB
-- OpenAI API
-- Stripe Integration
-- JWT Authentication
+- Node.js & Express.js
+- MongoDB with Mongoose
+- RESTful API architecture
+- JWT authentication
+- Integration with Pexels API
+- Cloudinary for image management
 
-### AI Tools
-- Cursor
-- Claude 3.7
-- Manus
-
-### SCREENSHOTS (lumin.ai)
-![Image](https://github.com/user-attachments/assets/3772db09-1039-4b66-8708-2dd86ae227fa)
-![Image](https://github.com/user-attachments/assets/96da2c4d-925a-4295-a3ac-ce8193ccf3ca)
-![Image](https://github.com/user-attachments/assets/3046e863-f949-43c7-8980-e88c0e3962af)
-![Image](https://github.com/user-attachments/assets/1d41bdf9-c07c-462c-82c9-6638bd348cb5)
-![Image](https://github.com/user-attachments/assets/5409dfe4-bc36-44fb-9afe-bda1edde0a5b)
-![Image](https://github.com/user-attachments/assets/c28f5d68-ce99-4ab7-9294-477e7397cff9)
-![Image](https://github.com/user-attachments/assets/c564839e-cee0-4d1a-81f2-b7d7172965cc)
-
-## 💻 Getting Started
+## 🚀 Local Development
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- MongoDB
-- OpenAI API key
-- Stripe account (for payments)
+- npm or yarn
+- MongoDB account
+- Pexels API key
+- Cloudinary account
 
-### Installation
+### Setup Instructions
 
 1. Clone the repository
 ```bash
@@ -81,15 +62,12 @@ cd LuminAI
 
 2. Install dependencies
 ```bash
-# Install root dependencies
+# Install backend dependencies
+cd server
 npm install
 
-# Install client dependencies
-cd client
-npm install
-
-# Install server dependencies
-cd ../server
+# Install frontend dependencies
+cd ../client
 npm install
 ```
 
@@ -98,11 +76,10 @@ npm install
 Create a `.env` file in the server directory:
 ```env
 MONGODB_URL=your_mongodb_url
-OPENAI_API_KEY=your_openai_api_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
-NODE_ENV=development
-PORT=5000
+PEXELS_API_KEY=your_pexels_api_key
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_secret
 ```
 
 Create a `.env` file in the client directory:
@@ -112,138 +89,68 @@ VITE_API_URL=http://localhost:5000
 
 4. Start the development servers
 
-In the server directory:
+Backend:
 ```bash
+cd server
 npm start
 ```
 
-In the client directory:
+Frontend:
 ```bash
+cd client
 npm run dev
 ```
 
-## 🌐 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
-
-### Logo Generation
-- `POST /api/v1/dalle` - Generate logo
-- `GET /api/v1/post` - Get all generated logos
-- `POST /api/v1/post` - Save generated logo
-
-### SEO Research
-- `POST /api/v1/seo-research` - Analyze keywords
-- `GET /api/v1/seo-research/:id` - Get analysis results
-
-### Task Management
-- `GET /api/v1/tasks` - Get all tasks
-- `POST /api/v1/tasks` - Create new task
-- `PUT /api/v1/tasks/:id` - Update task
-- `DELETE /api/v1/tasks/:id` - Delete task
-
-## 🔒 Security
-
-- JWT authentication
-- Rate limiting
-- CORS protection
-- Input validation
-- Secure password hashing
-- Environment variable protection
-
-## 🚀 Deployment
-
-### Using Render
-
-1. Create a new account on Render
-2. Connect your GitHub repository
-3. Create a new Web Service for the backend
-4. Create a new Static Site for the frontend
-5. Configure environment variables
-6. Deploy!
-
-Detailed deployment instructions are available in [DEPLOYMENT.md](DEPLOYMENT.md)
+The application will be available at:
+- Frontend: http://localhost:5173
+- Backend: http://localhost:5000
 
 ## 📱 Responsive Design
 
-LuminAI is fully responsive and optimized for:
+LuminAI is fully responsive and works seamlessly across:
 - Desktop computers
 - Tablets
 - Mobile devices
-- Different screen sizes and orientations
+
+![Responsive Design](screenshots/responsive.png)
 
 ## ⚡ Performance
 
-- Lazy loading of components
+- Lazy loading for optimal performance
 - Image optimization
-- Code splitting
-- Caching strategies
-- Minified production builds
+- Efficient caching strategies
+- Fast API response times
 
-## 🤝 Contributing
+## 🔒 Security Features
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- JWT authentication
+- Input validation
+- Secure password hashing
+- Protected API endpoints
+- Environment variable protection
+
+## 👥 Contributing
+
+Interested in contributing? Please read our [Contributing Guidelines](CONTRIBUTING.md).
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Team
+## 👤 Developer
 
-- Tanzim Sami - Full Stack Developer & Project Lead
-
-## 📞 Support
-
-For support, email support@luminai.com or join our Slack channel.
+**Tanzim Sami**  
+Full Stack Developer & Project Lead
+- GitHub: [@tanzimine](https://github.com/tanzimine)
+- LinkedIn: [Tanzim Sami](your-linkedin-url)
 
 ## 🙏 Acknowledgments
 
-- OpenAI for their powerful API
-- Material-UI team for the amazing component library
-- The open-source community for their invaluable contributions
-
-## ⚡ Quick Deploy (One-Click)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftanzimine%2FLuminAI)
-
-1. Click the "Deploy with Vercel" button above
-2. Create a free Vercel account if you don't have one
-3. Connect your GitHub repository
-4. Add these environment variables:
-   ```
-   MONGODB_URL=your_mongodb_url
-   OPENAI_API_KEY=your_openai_api_key
-   NODE_ENV=production
-   ```
-5. Click "Deploy"
-
-That's it! Vercel will automatically:
-- Deploy both frontend and backend as serverless functions
-- Set up HTTPS and CDN
-- Provide a production URL
-- Enable automatic deployments
-- Set up preview deployments for PRs
-
-Your app will be live in about 2 minutes! 🚀
-
-> **Need a MongoDB URL quickly?**
-> 1. Go to [MongoDB Atlas](https://mongodb.com/atlas)
-> 2. Create a free account
-> 3. Click "Build a Database" (Free tier)
-> 4. Create a database user
-> 5. Click "Connect" and copy your connection string
-
-> **Need an OpenAI API key?**
-> 1. Go to [OpenAI API Keys](https://platform.openai.com/api-keys)
-> 2. Create a free account
-> 3. Click "Create new secret key"
-> 4. Copy your API key
+- [Material-UI](https://mui.com/) for the beautiful components
+- [Pexels](https://www.pexels.com/) for the image generation API
+- [Cloudinary](https://cloudinary.com/) for image management
+- The open-source community for inspiration and resources
 
 ---
 
-Made with ❤️ by LuminAI Team
+<p align="center">Made with ❤️ by Tanzim Sami</p>

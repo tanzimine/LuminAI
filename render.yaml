@@ -1,7 +1,9 @@
 services:
   - type: web
-    name: luminai-server
+    name: luminai-backend
     env: node
+    region: oregon
+    plan: free
     buildCommand: cd server && npm install
     startCommand: cd server && npm start
     envVars:
