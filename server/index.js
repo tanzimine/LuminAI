@@ -5,7 +5,6 @@ import cors from 'cors';
 import connectDB from './mongodb/connect.js';
 import postRoutes from './routes/postRoutes.js';
 import dalleRoutes from './routes/dalleRoutes.js';
-import stripeRoutes from './stripeRoutes.js';
 
 dotenv.config();
 
@@ -21,9 +20,6 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept']
 }));
-
-// Special handling for Stripe webhook
-app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
 
 // Regular middleware for other routes
 app.use(express.json({ limit: '50mb' }));
@@ -71,15 +67,6 @@ app.use('/api/v1/dalle', async (req, res, next) => {
   try {
     await connectToDb();
     return dalleRoutes(req, res, next);
-  } catch (error) {
-    next(error);
-  }
-});
-
-app.use('/api/stripe', async (req, res, next) => {
-  try {
-    await connectToDb();
-    return stripeRoutes(req, res, next);
   } catch (error) {
     next(error);
   }
