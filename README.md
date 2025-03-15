@@ -51,6 +51,11 @@ Get AI-powered creative suggestions for your business.
 - Integration with Pexels API
 - Cloudinary for image management
 
+### AI Tools
+- Claude 3.7
+- Cursor
+- Manus
+
 ## 🚀 Local Development
 
 ### Prerequisites
@@ -109,18 +114,12 @@ cd client
 npm run dev
 ```
 
-The application will be available at:
-- Frontend: http://localhost:5173
-- Backend: http://localhost:5000
-
 ## 📱 Responsive Design
 
 LuminAI is fully responsive and works seamlessly across:
 - Desktop computers
 - Tablets
 - Mobile devices
-
-![Responsive Design](screenshots/responsive.png)
 
 ## ⚡ Performance
 
@@ -137,20 +136,12 @@ LuminAI is fully responsive and works seamlessly across:
 - Protected API endpoints
 - Environment variable protection
 
-## 👥 Contributing
-
-Interested in contributing? Please read our [Contributing Guidelines](CONTRIBUTING.md).
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👤 Developer
 
 **Tanzim Sami**  
 Full Stack Developer & Project Lead
 - GitHub: [@tanzimine](https://github.com/tanzimine)
-- LinkedIn: [Tanzim Sami](your-linkedin-url)
+- LinkedIn: [Tanzim Sami]([your-linkedin-url](https://www.linkedin.com/in/tanzimsami/))
 
 ## 🙏 Acknowledgments
 
