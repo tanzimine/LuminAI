@@ -1,4 +1,16 @@
 {
+  "name": "luminai",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && npm start",
+    "dev": "cd client && npm run dev"
+  },
   "dependencies": {
     "framer-motion": "^12.5.0",
     "tailwindcss": "^4.0.14"
