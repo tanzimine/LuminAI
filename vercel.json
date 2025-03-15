@@ -19,11 +19,25 @@
       "dest": "/server/index.js"
     },
     {
+      "src": "^/assets/.*\\.js$",
+      "headers": {
+        "Content-Type": "application/javascript"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/assets/.*\\.css$",
+      "headers": {
+        "Content-Type": "text/css"
+      },
+      "continue": true
+    },
+    {
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/client/index.html"
+      "dest": "/client/dist/index.html"
     }
   ]
 } 
