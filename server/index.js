@@ -11,26 +11,8 @@ dotenv.config();
 
 const app = express();
 
-// Configure CORS for production
-const allowedOrigins = [
-  process.env.CLIENT_URL,
-  'https://lumin-ai-frontend.onrender.com',
-  'http://localhost:5173'
-];
-
-app.use(cors({
-  origin: function(origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+// Configure CORS
+app.use(cors());
 
 // Special handling for Stripe webhook
 app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
@@ -38,42 +20,45 @@ app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
 // Regular middleware for other routes
 app.use(express.json());
 
-console.log('✅ Loaded API Key:', process.env.OPENAI_API_KEY ? 'Exists' : 'Not Found');
+// Connect to MongoDB
+let isConnected = false;
+const connectToDb = async () => {
+  if (!isConnected) {
+    await connectDB(process.env.MONGODB_URL);
+    isConnected = true;
+  }
+};
 
-app.use('/api/v1/post', postRoutes);
-app.use('/api/v1/dalle', dalleRoutes);
-app.use('/api/stripe', stripeRoutes);
+// Routes
+app.use('/api/v1/post', async (req, res, next) => {
+  await connectToDb();
+  return postRoutes(req, res, next);
+});
 
-app.get('/', async (req, res) => {
-    res.send('LuminAI API is running!');
+app.use('/api/v1/dalle', async (req, res, next) => {
+  await connectToDb();
+  return dalleRoutes(req, res, next);
+});
+
+app.use('/api/stripe', async (req, res, next) => {
+  await connectToDb();
+  return stripeRoutes(req, res, next);
 });
 
 // Health check endpoint
-app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'healthy' });
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'healthy' });
 });
-
-const startServer = async () => {
-    try {
-        await connectDB(process.env.MONGODB_URL);
-        const PORT = process.env.PORT || 5000;
-        app.listen(PORT, () => {
-            console.log(`✅ Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-            console.log('✅ MongoDB Connected');
-        });
-    } catch (error) {
-        console.error('❌ Error starting server:', error);
-    }
-};
-
-startServer();
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ 
-        error: process.env.NODE_ENV === 'production' 
-            ? 'Something went wrong!' 
-            : err.message 
-    });
+  console.error(err);
+  res.status(500).json({ 
+    error: process.env.NODE_ENV === 'production' 
+      ? 'Something went wrong!' 
+      : err.message 
+  });
 });
+
+// Export the Express API
+export default app;

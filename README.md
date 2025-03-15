@@ -193,6 +193,43 @@ For support, email support@luminai.com or join our Slack channel.
 - Material-UI team for the amazing component library
 - The open-source community for their invaluable contributions
 
+## ⚡ Quick Deploy (One-Click)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftanzimine%2FLuminAI)
+
+1. Click the "Deploy with Vercel" button above
+2. Create a free Vercel account if you don't have one
+3. Connect your GitHub repository
+4. Add these environment variables:
+   ```
+   MONGODB_URL=your_mongodb_url
+   OPENAI_API_KEY=your_openai_api_key
+   NODE_ENV=production
+   ```
+5. Click "Deploy"
+
+That's it! Vercel will automatically:
+- Deploy both frontend and backend as serverless functions
+- Set up HTTPS and CDN
+- Provide a production URL
+- Enable automatic deployments
+- Set up preview deployments for PRs
+
+Your app will be live in about 2 minutes! 🚀
+
+> **Need a MongoDB URL quickly?**
+> 1. Go to [MongoDB Atlas](https://mongodb.com/atlas)
+> 2. Create a free account
+> 3. Click "Build a Database" (Free tier)
+> 4. Create a database user
+> 5. Click "Connect" and copy your connection string
+
+> **Need an OpenAI API key?**
+> 1. Go to [OpenAI API Keys](https://platform.openai.com/api-keys)
+> 2. Create a free account
+> 3. Click "Create new secret key"
+> 4. Copy your API key
+
 ---
 
 Made with ❤️ by LuminAI Team
