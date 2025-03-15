@@ -22,4 +22,14 @@ export default defineConfig({
     },
   },
   base: './',
+  esbuild: {
+    supported: {
+      'top-level-await': true
+    },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2020'
+    }
+  }
 })
