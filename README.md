@@ -3,7 +3,7 @@
 ## 🌟 **[LIVE DEMO](https://luminai-business.netlify.app/)** 🌟
 Experience the power of AI-driven business solutions - **[Visit Demo Site](https://luminai-business.netlify.app/)**
 
-![LuminAI Banner]![Image](https://github.com/user-attachments/assets/31434da2-b2f4-4e96-b8dd-7397dd1b4cec)
+![Image](https://github.com/user-attachments/assets/31434da2-b2f4-4e96-b8dd-7397dd1b4cec)
 
 ## 🎥 Live Demo
 
