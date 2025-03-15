@@ -7,6 +7,8 @@ Experience the power of AI-driven business solutions - **[Visit Demo Site](https
 
 ## 🎥 Live Demo
 
+**[🌟 LIVE DEMO SITE](https://luminai-business.netlify.app/)**
+
 Watch a complete walkthrough of LuminAI's features:
 
 [▶️ Watch Demo Video](your-youtube-link-here)
