@@ -1,0 +1,10 @@
+export { default as Home } from './Home';
+export { default as CreatePost } from './CreatePost';
+export { default as About } from './About';
+export { default as Solutions } from './Solutions';
+export { default as CaseStudies } from './CaseStudies';
+export { default as LogoGenerator } from './LogoGenerator';
+export { default as SeoTools } from './SeoTools';
+export { default as BusinessIdeas } from './BusinessIdeas';
+export { default as Pricing } from './Pricing';
+export { default as Success } from './Success';
